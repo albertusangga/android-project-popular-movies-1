@@ -1,71 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/tv_movie_detail_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Title"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:columnCount="2"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     >
 
-        <LinearLayout android:layout_columnWeight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_movie_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textAlignment="center"
+                tools:text="Naruto: Boruto The Movie"
+                />
+
+            <TextView
+                android:id="@+id/tv_movie_detail_release_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                tools:text="2017-05-01"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_large"
+            >
+
             <ImageView
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:id="@+id/iv_movie_detail"
-                android:layout_columnWeight="1"/>
+                android:layout_columnWeight="1"
+                tools:src="@android:drawable/ic_menu_report_image"
+            />
+
         </LinearLayout>
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp"
-            android:layout_columnWeight="1">
-
-            <TextView
-                android:id="@+id/tv_movie_detail_release_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Release Date"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:layout_margin="@dimen/margin_small"
+            >
 
             <RatingBar
                 android:id="@+id/rb_movie_detail_average_vote"
                 style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:numStars="10" />
+                android:layout_gravity="center"
+                android:numStars="@integer/number_of_rating_stars"
+                tools:rating="7.5" />
+
         </LinearLayout>
 
-    </GridLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp">
-        <TextView
-            android:id="@+id/tv_movie_detail_overview"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="overview overview overview overview overview overviewoverview overview overview overviewoverview overview"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/margin_medium"
+            >
+
+            <TextView
+                android:id="@+id/tv_movie_detail_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Several years after the end of the Shinobi War, Naruto's son Boruto is about to enter the Chûnin exams alongside Sarada Uchiha and the mysterious Mitsuki."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/pb_movie_detail_loading_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/pb_movie_detail_loading_indicator"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</LinearLayout>
+</ScrollView>

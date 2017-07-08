@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium">20dp</dimen>
+    <dimen name="margin_large">50dp</dimen>
+    <dimen name="image_medium">150dp</dimen>
+    <integer name="number_of_rating_stars">10</integer>
+    <integer name="number_of_columns_portrait">2</integer>
+    <integer name="number_of_columns_landscape">4</integer>
+</resources>

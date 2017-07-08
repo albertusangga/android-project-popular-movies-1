@@ -3,6 +3,8 @@ package com.example.albertusangga.popularmoviepart1.utilities;
 import android.net.Uri;
 import android.util.Log;
 
+import com.example.albertusangga.popularmoviepart1.BuildConfig;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -21,9 +23,6 @@ public class NetworkUtils {
     private static final String TAG = NetworkUtils.class.getSimpleName();
 
     private static final String API_KEY_PARAM = "api_key";
-
-    // INSERT / CHANGE YOUR API_KEY HERE
-    private static final String api_key = "";
 
     // Popular Movies API URL
     public static final String POPULAR_PARAM = "popular";
@@ -60,10 +59,10 @@ public class NetworkUtils {
         Uri builtUri = null;
         if(filter.equals(POPULAR_PARAM)) {
             builtUri = Uri.parse(POPULAR_MOVIE_DB_URL).buildUpon()
-                    .appendQueryParameter(API_KEY_PARAM, api_key).build();
+                    .appendQueryParameter(API_KEY_PARAM, BuildConfig.THE_MOVIE_DB_API_TOKEN).build();
         } else {
             builtUri = Uri.parse(TOP_RATED_MOVIE_DB_URL).buildUpon()
-                    .appendQueryParameter(API_KEY_PARAM, api_key).build();
+                    .appendQueryParameter(API_KEY_PARAM, BuildConfig.THE_MOVIE_DB_API_TOKEN).build();
         }
         URL url = null;
         try {
